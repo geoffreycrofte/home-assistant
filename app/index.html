@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-theme="default" data-mode="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -7,6 +7,17 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/icon.svg" />
     <title>Maison</title>
+    <script>
+      // Applique le thème mémorisé avant le premier rendu (évite un flash de couleurs).
+      // La logique complète est dans src/theme/ThemeProvider.tsx.
+      try {
+        var t = localStorage.getItem("maison.theme");
+        var m = localStorage.getItem("maison.colorMode") || "system";
+        if (t) document.documentElement.dataset.theme = t;
+        if (m === "system") m = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.mode = m;
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

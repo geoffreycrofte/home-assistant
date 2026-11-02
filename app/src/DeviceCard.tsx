@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { type Connection, callService } from "home-assistant-js-websocket";
+import { IconBolt, IconBulb, IconBulbOff, IconPlug, IconPlugOff } from "@tabler/icons-react";
 import type { Device } from "./useHome";
 
 interface Props {
@@ -25,6 +26,8 @@ export function DeviceCard({ conn, device }: Props) {
   // Le nouvel état arrive par l'abonnement : on lève l'indicateur à ce moment-là.
   useEffect(() => setPending(false), [entity.state]);
 
+  const Icon = domain === "light" ? (isOn ? IconBulb : IconBulbOff) : isOn ? IconPlug : IconPlugOff;
+
   async function toggle() {
     setPending(true);
     try {
@@ -49,13 +52,16 @@ export function DeviceCard({ conn, device }: Props) {
         aria-pressed={isOn}
         aria-label={`${name} : ${isOn ? "allumé" : "éteint"}`}
       >
-        <span className="card__icon" aria-hidden="true">
-          {domain === "light" ? "💡" : "🔌"}
-        </span>
+        <Icon className="card__icon" size={28} stroke={1.75} aria-hidden="true" />
         <span className="card__name">{name}</span>
         <span className="card__state">
           {unavailable ? "Indisponible" : isOn ? "Allumé" : "Éteint"}
-          {power !== null && ` · ${power.toLocaleString("fr-FR", { maximumFractionDigits: 1 })} W`}
+          {power !== null && (
+            <span className="card__power">
+              <IconBolt size={14} aria-hidden="true" />
+              {power.toLocaleString("fr-FR", { maximumFractionDigits: 1 })} W
+            </span>
+          )}
         </span>
       </button>
 

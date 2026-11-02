@@ -1,0 +1,45 @@
+/* Thème « Ambre » (par défaut). Chaque thème définit TOUTES les variables,
+   sur [data-theme] (pas :root) pour pouvoir prévisualiser un thème dans un élément,
+   en clair puis en sombre. Liste et rôle des variables : docs/themes.md */
+
+[data-theme="default"] {
+  --color-bg: #f4f4f6;
+  --color-surface: #ffffff;
+  --color-text: #16181d;
+  --color-text-muted: #5d6270;
+  --color-border: #dcdde3;
+
+  --color-accent: #c98a0b;
+  --color-on-accent: #16181d;
+
+  --color-active-surface: #fdf1d6;
+  --color-active-border: #c98a0b;
+  --color-active-icon: #a86f00;
+
+  --color-success: #1e7a3c;
+  --color-danger: #b3261e;
+  --color-focus: #c98a0b;
+
+  color-scheme: light;
+}
+
+[data-theme="default"][data-mode="dark"] {
+  --color-bg: #16181d;
+  --color-surface: #22252d;
+  --color-text: #eceef3;
+  --color-text-muted: #a0a5b2;
+  --color-border: #353945;
+
+  --color-accent: #f5b942;
+  --color-on-accent: #16181d;
+
+  --color-active-surface: #3a3120;
+  --color-active-border: #f5b942;
+  --color-active-icon: #f5b942;
+
+  --color-success: #6fd08c;
+  --color-danger: #ff8a80;
+  --color-focus: #f5b942;
+
+  color-scheme: dark;
+}

@@ -1,6 +1,9 @@
+import { useState } from "react";
 import type { Connection } from "home-assistant-js-websocket";
+import { IconSettings, IconWifi, IconWifiOff } from "@tabler/icons-react";
 import { useHome } from "./useHome";
 import { DeviceCard } from "./DeviceCard";
+import { Settings } from "./Settings";
 
 interface Props {
   conn: Connection;
@@ -9,16 +12,19 @@ interface Props {
 
 export function Home({ conn, onLogout }: Props) {
   const { rooms, status } = useHome(conn);
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const connected = status === "connected";
 
   return (
     <>
       <header className="topbar">
         <h1>Maison</h1>
-        <span className={`status status--${status}`}>
-          {status === "connected" ? "Connecté" : "Reconnexion…"}
+        <span className={`status status--${status}`} role="status">
+          {connected ? <IconWifi size={18} aria-hidden="true" /> : <IconWifiOff size={18} aria-hidden="true" />}
+          {connected ? "Connecté" : "Reconnexion…"}
         </span>
-        <button className="ghost" onClick={onLogout}>
-          Déconnexion
+        <button className="icon-button" onClick={() => setSettingsOpen(true)} aria-label="Réglages">
+          <IconSettings aria-hidden="true" />
         </button>
       </header>
 
@@ -40,6 +46,8 @@ export function Home({ conn, onLogout }: Props) {
           </section>
         ))}
       </main>
+
+      <Settings open={settingsOpen} onClose={() => setSettingsOpen(false)} onLogout={onLogout} />
     </>
   );
 }

@@ -30,8 +30,10 @@ Lampes HEMA/Tuya (LocalTuya) · Prises Tapo P110 (TP-Link)
 - Allumer / éteindre d'un tap, réglage de la luminosité pour les lampes
   compatibles.
 - Consommation instantanée (W) affichée sur les prises qui la mesurent (P110).
-- Reconnexion automatique, thème clair / sombre, installable sur l'écran
-  d'accueil (en HTTPS).
+- Icônes [Tabler Icons](https://tabler.io/icons) (`@tabler/icons-react`).
+- Système de **thèmes multiples**, chacun en clair et sombre, choisis dans
+  Réglages (mode Système / Clair / Sombre). Voir [`docs/themes.md`](docs/themes.md).
+- Reconnexion automatique, installable sur l'écran d'accueil (en HTTPS).
 
 ## Développement
 
