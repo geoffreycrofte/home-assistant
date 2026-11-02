@@ -1,9 +1,12 @@
 /* Un @import par thème (les @import doivent rester en tête de fichier). */
-@import "./default.css";
+@import "@fontsource-variable/bricolage-grotesque/opsz.css";
+@import "./soda-pop.css";
+@import "./ambre.css";
 
-/* Variables communes à tous les thèmes (un thème peut les surcharger). */
-:root {
+/* Valeurs communes, sans spécificité (:where) : chaque thème peut les surcharger. */
+:where([data-theme]) {
   --font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --radius-card: 16px;
-  --radius-control: 12px;
+  --radius-card: 28px;
+  --radius-control: 18px;
+  --radius-island: 999px;
 }

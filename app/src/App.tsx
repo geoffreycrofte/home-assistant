@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { MotionConfig } from "motion/react";
 import type { Connection } from "home-assistant-js-websocket";
 import { logout, restoreConnection } from "./ha";
 import { Login } from "./Login";
-import { Home } from "./Home";
+import { Shell } from "./Shell";
+import { Background } from "./components/Background";
 
 export default function App() {
   const [conn, setConn] = useState<Connection | null>(null);
@@ -16,17 +18,23 @@ export default function App() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="splash">Connexion…</p>;
-
-  if (!conn) return <Login onConnected={setConn} initialError={error} />;
-
   return (
-    <Home
-      conn={conn}
-      onLogout={() => {
-        logout(conn);
-        setConn(null);
-      }}
-    />
+    // Les animations respectent le réglage « réduire les animations » du système.
+    <MotionConfig reducedMotion="user">
+      <Background />
+      {loading ? (
+        <p className="splash">Connexion…</p>
+      ) : conn ? (
+        <Shell
+          conn={conn}
+          onLogout={() => {
+            logout(conn);
+            setConn(null);
+          }}
+        />
+      ) : (
+        <Login onConnected={setConn} initialError={error} />
+      )}
+    </MotionConfig>
   );
 }

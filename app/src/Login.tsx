@@ -33,7 +33,7 @@ export function Login({ onConnected, initialError }: Props) {
     <main className="login">
       <h1>Maison</h1>
       <p className="muted">Connecte-toi à ton serveur Home Assistant.</p>
-      <form onSubmit={submit}>
+      <form className="panel" onSubmit={submit}>
         <label>
           Adresse de Home Assistant
           <input
@@ -71,7 +71,7 @@ export function Login({ onConnected, initialError }: Props) {
           </p>
         )}
 
-        <button type="submit" disabled={busy}>
+        <button className="button" type="submit" disabled={busy}>
           {busy ? "Connexion…" : "Se connecter"}
         </button>
       </form>

@@ -2,21 +2,24 @@
  * Registre des thèmes.
  *
  * Pour ajouter un thème :
- *  1. Créer `themes/<id>.css` en copiant `themes/default.css`
+ *  1. Créer `themes/<id>.css` en copiant `themes/soda-pop.css`
  *     (mêmes variables, valeurs claires et sombres).
  *  2. L'importer dans `themes/index.css`.
  *  3. L'ajouter dans la liste THEMES ci-dessous.
  *
  * La liste des variables est documentée dans `docs/themes.md`.
  */
-export const THEMES = [{ id: "default", label: "Ambre" }] as const;
+export const THEMES = [
+  { id: "soda-pop", label: "Soda Pop" },
+  { id: "ambre", label: "Ambre" },
+] as const;
 
 export type ThemeId = (typeof THEMES)[number]["id"];
 
 /** "system" suit le réglage clair/sombre de l'appareil. */
 export type ColorMode = "system" | "light" | "dark";
 
-export const DEFAULT_THEME: ThemeId = "default";
+export const DEFAULT_THEME: ThemeId = "soda-pop";
 export const DEFAULT_MODE: ColorMode = "system";
 
 export const STORAGE_KEYS = {

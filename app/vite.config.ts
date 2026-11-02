@@ -23,8 +23,8 @@ export default defineConfig(({ mode }) => {
           display: "standalone",
           start_url: base,
           scope: base,
-          theme_color: "#16181d",
-          background_color: "#16181d",
+          theme_color: "#391E34",
+          background_color: "#391E34",
           icons: [
             { src: "icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
             { src: "icon.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },

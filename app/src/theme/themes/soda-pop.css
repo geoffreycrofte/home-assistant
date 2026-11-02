@@ -1,0 +1,89 @@
+/* Thème « Soda Pop » (fraise rose). Palette d'origine :
+   gray-100 #391E34 · gray-50 #797277 · gray-30 #DFDADE · white #FFFFFF
+   main-100 #635700 · main-50 #FFF838 · main-30 #FEFC8F · main-05 #FFFFCD
+   secondary-100 #66004A · secondary-50 #B51C87 · secondary-30 #ED8CD0 · secondary-05 #FFE8F3
+   Les variables sont posées sur [data-theme] (pas :root) pour permettre
+   l'aperçu d'un thème dans n'importe quel élément. Rôles : docs/themes.md */
+
+[data-theme="soda-pop"] {
+  --color-bg: #fff7fb;
+  --color-blob-1: #ffe8f3;
+  --color-blob-2: #ffffcd;
+  --color-blob-3: #ed8cd0;
+
+  --color-surface: rgb(255 255 255 / 0.72);
+  --color-surface-solid: #ffffff;
+  --color-surface-sunken: #f7eef3;
+  --color-text: #391e34;
+  --color-text-muted: #6e676c;
+  --color-border: rgb(57 30 52 / 0.08);
+
+  --color-accent: #b51c87;
+  --color-on-accent: #ffffff;
+
+  --color-active-surface: #fff838;
+  --color-on-active: #391e34;
+  --color-on-active-muted: #635700;
+  --color-active-icon: #635700;
+  --color-icon-halo: rgb(255 255 255 / 0.75);
+  --color-glow: #fff838;
+
+  --color-toggle-track: #797277;
+  --color-toggle-track-on: #b51c87;
+  --color-toggle-knob: #ffffff;
+
+  --color-island: #391e34;
+  --color-on-island: #dfdade;
+  --color-island-active: #fff838;
+  --color-on-island-active: #391e34;
+
+  --color-success: #635700;
+  --color-danger: #66004a;
+  --color-focus: #b51c87;
+
+  --shadow-float: 0 18px 40px -18px rgb(102 0 74 / 0.35);
+  --font-family: "Bricolage Grotesque Variable", system-ui, sans-serif;
+
+  color-scheme: light;
+}
+
+[data-theme="soda-pop"][data-mode="dark"] {
+  --color-bg: #391e34;
+  --color-blob-1: #561143;
+  --color-blob-2: #4d4310;
+  --color-blob-3: #b51c87;
+
+  --color-surface: rgb(255 255 255 / 0.08);
+  --color-surface-solid: #4a2c44;
+  --color-surface-sunken: rgb(0 0 0 / 0.2);
+  --color-text: #ffffff;
+  --color-text-muted: #dfdade;
+  --color-border: rgb(255 255 255 / 0.1);
+
+  --color-accent: #ed8cd0;
+  --color-on-accent: #66004a;
+
+  --color-active-surface: #fff838;
+  --color-on-active: #391e34;
+  --color-on-active-muted: #635700;
+  --color-active-icon: #635700;
+  --color-icon-halo: rgb(255 255 255 / 0.75);
+  --color-glow: #fff838;
+
+  --color-toggle-track: #8a7a86;
+  --color-toggle-track-on: #ed8cd0;
+  --color-toggle-knob: #ffffff;
+
+  --color-island: #ffe8f3;
+  --color-on-island: #66004a;
+  --color-island-active: #fff838;
+  --color-on-island-active: #391e34;
+
+  --color-success: #fefc8f;
+  --color-danger: #ed8cd0;
+  --color-focus: #fff838;
+
+  --shadow-float: 0 18px 40px -16px rgb(0 0 0 / 0.6);
+
+  color-scheme: dark;
+}

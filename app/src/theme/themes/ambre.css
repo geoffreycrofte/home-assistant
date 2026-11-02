@@ -1,0 +1,83 @@
+/* Thème « Ambre ». Mêmes variables que soda-pop.css. Rôles : docs/themes.md */
+
+[data-theme="ambre"] {
+  --color-bg: #f4f4f6;
+  --color-blob-1: #fdf1d6;
+  --color-blob-2: #e6e8ef;
+  --color-blob-3: #f5d38a;
+
+  --color-surface: rgb(255 255 255 / 0.75);
+  --color-surface-solid: #ffffff;
+  --color-surface-sunken: #ebecf0;
+  --color-text: #16181d;
+  --color-text-muted: #5d6270;
+  --color-border: rgb(22 24 29 / 0.08);
+
+  --color-accent: #9a6700;
+  --color-on-accent: #ffffff;
+
+  --color-active-surface: #fdf1d6;
+  --color-on-active: #16181d;
+  --color-on-active-muted: #6b4a00;
+  --color-active-icon: #a86f00;
+  --color-icon-halo: rgb(255 255 255 / 0.75);
+  --color-glow: #f5b942;
+
+  --color-toggle-track: #757a87;
+  --color-toggle-track-on: #9a6700;
+  --color-toggle-knob: #ffffff;
+
+  --color-island: #16181d;
+  --color-on-island: #c9ccd4;
+  --color-island-active: #f5b942;
+  --color-on-island-active: #16181d;
+
+  --color-success: #1e7a3c;
+  --color-danger: #b3261e;
+  --color-focus: #9a6700;
+
+  --shadow-float: 0 18px 40px -18px rgb(22 24 29 / 0.35);
+
+  color-scheme: light;
+}
+
+[data-theme="ambre"][data-mode="dark"] {
+  --color-bg: #16181d;
+  --color-blob-1: #3a3120;
+  --color-blob-2: #22252d;
+  --color-blob-3: #6b4a00;
+
+  --color-surface: rgb(255 255 255 / 0.06);
+  --color-surface-solid: #22252d;
+  --color-surface-sunken: rgb(0 0 0 / 0.25);
+  --color-text: #eceef3;
+  --color-text-muted: #a0a5b2;
+  --color-border: rgb(255 255 255 / 0.08);
+
+  --color-accent: #f5b942;
+  --color-on-accent: #16181d;
+
+  --color-active-surface: #f5b942;
+  --color-on-active: #16181d;
+  --color-on-active-muted: #3d2a00;
+  --color-active-icon: #3d2a00;
+  --color-icon-halo: rgb(255 255 255 / 0.75);
+  --color-glow: #f5b942;
+
+  --color-toggle-track: #6b7080;
+  --color-toggle-track-on: #f5b942;
+  --color-toggle-knob: #ffffff;
+
+  --color-island: #eceef3;
+  --color-on-island: #2c2f38;
+  --color-island-active: #f5b942;
+  --color-on-island-active: #16181d;
+
+  --color-success: #6fd08c;
+  --color-danger: #ff8a80;
+  --color-focus: #f5b942;
+
+  --shadow-float: 0 18px 40px -16px rgb(0 0 0 / 0.6);
+
+  color-scheme: dark;
+}
