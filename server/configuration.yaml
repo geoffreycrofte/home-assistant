@@ -1,0 +1,15 @@
+# Configuration de départ pour Home Assistant.
+# À copier dans /volume1/docker/homeassistant/config/configuration.yaml
+# (le fichier est créé au premier démarrage : ajoute simplement le bloc http).
+
+default_config:
+
+http:
+  # Origines autorisées à appeler Home Assistant depuis un autre domaine.
+  # Inutile si la PWA est servie par Home Assistant lui-même (/local/maison/).
+  cors_allowed_origins:
+    - http://localhost:5173 # serveur de dev Vite
+    # - https://maison.ton-domaine.fr # si tu héberges la PWA ailleurs
+
+# Pour tester l'app sans appareil réel, décommente la ligne suivante :
+# demo:
