@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => {
       react(),
       VitePWA({
         registerType: "autoUpdate",
-        includeAssets: ["icon.svg"],
+        includeAssets: ["icon.svg", "icons/icon-180.png"],
         manifest: {
           name: "Maison",
           short_name: "Maison",
@@ -26,8 +26,10 @@ export default defineConfig(({ mode }) => {
           theme_color: "#391E34",
           background_color: "#391E34",
           icons: [
+            { src: "icons/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+            { src: "icons/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+            { src: "icons/icon-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
             { src: "icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
-            { src: "icon.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },
           ],
         },
         workbox: {

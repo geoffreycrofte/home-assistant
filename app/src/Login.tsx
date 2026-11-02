@@ -1,6 +1,7 @@
 import { type FormEvent, useState } from "react";
 import type { Connection } from "home-assistant-js-websocket";
 import { loginWithOAuth, loginWithToken, savedHassUrl } from "./ha";
+import { isNative } from "./native";
 
 interface Props {
   onConnected: (conn: Connection) => void;
@@ -10,7 +11,8 @@ interface Props {
 export function Login({ onConnected, initialError }: Props) {
   const [url, setUrl] = useState(savedHassUrl());
   const [token, setToken] = useState("");
-  const [useToken, setUseToken] = useState(false);
+  // Dans l'app native, la redirection OAuth sortirait de l'app : on passe par un jeton.
+  const [useToken, setUseToken] = useState(isNative);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(initialError);
 
@@ -46,10 +48,12 @@ export function Login({ onConnected, initialError }: Props) {
           />
         </label>
 
-        <label className="check">
-          <input type="checkbox" checked={useToken} onChange={(e) => setUseToken(e.target.checked)} />
-          Utiliser un jeton longue durée
-        </label>
+        {!isNative && (
+          <label className="check">
+            <input type="checkbox" checked={useToken} onChange={(e) => setUseToken(e.target.checked)} />
+            Utiliser un jeton longue durée
+          </label>
+        )}
 
         {useToken && (
           <label>

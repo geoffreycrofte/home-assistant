@@ -42,7 +42,7 @@ export function DeviceCard({ device, onToggle, onOpen }: Props) {
             animate={{ scale: 1, rotate: 0 }}
             transition={{ type: "spring", stiffness: 420, damping: 12 }}
           >
-            <DeviceIcon device={device} />
+            <DeviceIcon device={device} size={30} />
           </motion.span>
           <AnimatePresence>{popKey > 0 && <Pop key={popKey} />}</AnimatePresence>
         </span>

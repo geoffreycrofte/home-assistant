@@ -106,7 +106,11 @@ button:disabled { cursor: default; }
   transition: background-color 0.35s, border-color 0.35s, color 0.35s, box-shadow 0.35s;
 }
 .card--on {
-  background: var(--color-active-surface); border-color: transparent; color: var(--color-on-active);
+  /* La lumière vient de l'icône : un léger voile coloré autour, la carte reste calme. */
+  background:
+    radial-gradient(120% 75% at 50% 42%, var(--color-active-wash), transparent 70%),
+    var(--color-active-surface);
+  border-color: var(--color-active-border); color: var(--color-on-active);
   box-shadow: var(--shadow-float);
 }
 .card--offline { opacity: 0.5; }
@@ -120,15 +124,17 @@ button:disabled { cursor: default; }
 .card__state { font-size: 0.875rem; font-weight: 600; color: var(--color-text-muted); padding-right: 60px; }
 .card--on .card__state { color: var(--color-on-active-muted); }
 
+/* Pastille ronde de l'icône : neutre au repos, « ampoule allumée » quand l'appareil est actif. */
 .card__icon {
   position: relative; display: grid; place-items: center; justify-self: center;
-  width: 72px; height: 72px; margin: 6px 0 10px; color: var(--color-text-muted);
+  width: 64px; height: 64px; margin: 10px 0 12px; border-radius: 50%;
+  background: var(--color-surface-sunken); color: var(--color-text-muted);
+  transition: background-color 0.35s, color 0.35s, box-shadow 0.35s;
 }
 .card__icon > span:first-child { display: grid; }
-.card--on .card__icon { color: var(--color-active-icon); }
-.card--on .card__icon::before {
-  content: ""; position: absolute; inset: 4px; border-radius: 50%;
-  background: radial-gradient(circle, var(--color-icon-halo), transparent 70%);
+.card--on .card__icon {
+  background: var(--color-active-icon-bg); color: var(--color-active-icon);
+  box-shadow: 0 4px 28px 2px color-mix(in srgb, var(--color-glow) 45%, transparent);
 }
 .card__icon svg { position: relative; }
 
@@ -156,7 +162,7 @@ button:disabled { cursor: default; }
 .pop { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
 .pop__bubble {
   grid-area: 1 / 1; width: 9px; height: 9px; border-radius: 50%;
-  border: 2px solid var(--color-active-icon);
+  border: 2px solid var(--color-accent);
 }
 
 /* ---------- Île flottante ---------- */
@@ -195,7 +201,7 @@ button:disabled { cursor: default; }
 .island-action__badge {
   position: absolute; top: -2px; right: -2px; min-width: 24px; height: 24px; padding: 0 6px;
   border-radius: 12px; display: grid; place-items: center;
-  background: var(--color-active-surface); color: var(--color-on-active);
+  background: var(--color-active-icon-bg); color: var(--color-active-icon);
   font-size: 0.8125rem; font-weight: 750; box-shadow: 0 0 0 3px var(--color-bg);
 }
 
@@ -274,7 +280,7 @@ button:disabled { cursor: default; }
   font-weight: 700; font-size: 1rem; transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 .dial--on .dial__power {
-  background: var(--color-active-surface); color: var(--color-on-active);
+  background: var(--color-active-icon-bg); color: var(--color-active-icon);
   box-shadow: 0 0 0 10px color-mix(in srgb, var(--color-glow) 30%, transparent),
     0 0 60px 10px color-mix(in srgb, var(--color-glow) 55%, transparent);
 }
@@ -291,7 +297,7 @@ button:disabled { cursor: default; }
 .meter:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; }
 .meter__icon {
   flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
-  background: var(--color-active-surface); color: var(--color-active-icon);
+  background: var(--color-active-icon-bg); color: var(--color-active-icon);
 }
 .meter__body { flex: 1; display: grid; gap: 6px; min-width: 0; }
 .meter__row { display: flex; justify-content: space-between; gap: 12px; }
@@ -344,7 +350,7 @@ button:disabled { cursor: default; }
 }
 .theme-swatch__a, .theme-swatch__b { position: absolute; border-radius: 50%; }
 .theme-swatch__a { width: 22px; height: 22px; left: 6px; top: 12px; background: var(--color-accent); }
-.theme-swatch__b { width: 18px; height: 18px; right: 5px; top: 8px; background: var(--color-active-surface); }
+.theme-swatch__b { width: 18px; height: 18px; right: 5px; top: 8px; background: var(--color-active-icon-bg); }
 
 .button {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;

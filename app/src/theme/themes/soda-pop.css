@@ -21,11 +21,13 @@
   --color-accent: #b51c87;
   --color-on-accent: #ffffff;
 
-  --color-active-surface: #fff838;
+  --color-active-surface: #ffffff;
+  --color-active-border: #fefc8f;
+  --color-active-wash: rgb(254 252 143 / 0.55);
   --color-on-active: #391e34;
   --color-on-active-muted: #635700;
+  --color-active-icon-bg: #fff838;
   --color-active-icon: #635700;
-  --color-icon-halo: rgb(255 255 255 / 0.75);
   --color-glow: #fff838;
 
   --color-toggle-track: #797277;
@@ -49,11 +51,11 @@
 
 [data-theme="soda-pop"][data-mode="dark"] {
   --color-bg: #391e34;
-  --color-blob-1: #561143;
+  --color-blob-1: #4c1440;
   --color-blob-2: #4d4310;
   --color-blob-3: #b51c87;
 
-  --color-surface: rgb(255 255 255 / 0.08);
+  --color-surface: rgb(255 255 255 / 0.05);
   --color-surface-solid: #4a2c44;
   --color-surface-sunken: rgb(0 0 0 / 0.2);
   --color-text: #ffffff;
@@ -63,11 +65,13 @@
   --color-accent: #ed8cd0;
   --color-on-accent: #66004a;
 
-  --color-active-surface: #fff838;
-  --color-on-active: #391e34;
-  --color-on-active-muted: #635700;
+  --color-active-surface: #643d5c;
+  --color-active-border: rgb(255 248 56 / 0.35);
+  --color-active-wash: rgb(255 248 56 / 0.16);
+  --color-on-active: #ffffff;
+  --color-on-active-muted: #fefc8f;
+  --color-active-icon-bg: #fff838;
   --color-active-icon: #635700;
-  --color-icon-halo: rgb(255 255 255 / 0.75);
   --color-glow: #fff838;
 
   --color-toggle-track: #8a7a86;

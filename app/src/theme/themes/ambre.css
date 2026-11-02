@@ -16,11 +16,13 @@
   --color-accent: #9a6700;
   --color-on-accent: #ffffff;
 
-  --color-active-surface: #fdf1d6;
+  --color-active-surface: #ffffff;
+  --color-active-border: #f5d38a;
+  --color-active-wash: rgb(253 241 214 / 0.9);
   --color-on-active: #16181d;
   --color-on-active-muted: #6b4a00;
-  --color-active-icon: #a86f00;
-  --color-icon-halo: rgb(255 255 255 / 0.75);
+  --color-active-icon-bg: #f5b942;
+  --color-active-icon: #3d2a00;
   --color-glow: #f5b942;
 
   --color-toggle-track: #757a87;
@@ -57,11 +59,13 @@
   --color-accent: #f5b942;
   --color-on-accent: #16181d;
 
-  --color-active-surface: #f5b942;
-  --color-on-active: #16181d;
-  --color-on-active-muted: #3d2a00;
+  --color-active-surface: #2a2d36;
+  --color-active-border: rgb(245 185 66 / 0.3);
+  --color-active-wash: rgb(245 185 66 / 0.1);
+  --color-on-active: #eceef3;
+  --color-on-active-muted: #f5d38a;
+  --color-active-icon-bg: #f5b942;
   --color-active-icon: #3d2a00;
-  --color-icon-halo: rgb(255 255 255 / 0.75);
   --color-glow: #f5b942;
 
   --color-toggle-track: #6b7080;

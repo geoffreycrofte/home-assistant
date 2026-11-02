@@ -31,12 +31,14 @@ L'utilisateur choisit le thème et le mode (Système / Clair / Sombre) dans
 | `--color-border` | Bordures légères |
 | `--color-accent` | Couleur principale : bouton « Éteindre les lumières », cadran, sélection |
 | `--color-on-accent` | Texte et icônes posés sur `--color-accent` |
-| `--color-active-surface` | Fond d'une carte d'appareil **allumé**, centre du cadran allumé |
+| `--color-active-surface` | Fond d'une carte d'appareil **allumé** (reste sobre : la couleur vient de l'icône) |
+| `--color-active-border` | Bordure d'une carte allumée |
+| `--color-active-wash` | Voile coloré translucide autour de l'icône d'une carte allumée |
 | `--color-on-active` | Texte sur `--color-active-surface` |
 | `--color-on-active-muted` | Texte secondaire sur `--color-active-surface` (« Allumé », watts) |
-| `--color-active-icon` | Icône d'un appareil allumé |
-| `--color-icon-halo` | Halo lumineux derrière l'icône d'un appareil allumé |
-| `--color-glow` | Lueur autour du bouton central du cadran |
+| `--color-active-icon-bg` | Pastille de l'icône allumée, centre du cadran allumé, pastille du compteur |
+| `--color-active-icon` | Icône posée sur `--color-active-icon-bg` |
+| `--color-glow` | Lueur autour de la pastille et du bouton central du cadran |
 | `--color-toggle-track`, `--color-toggle-track-on`, `--color-toggle-knob` | Interrupteurs des cartes |
 | `--color-island` | Fond de l'île de navigation flottante, des pastilles et sélections actives |
 | `--color-on-island` | Icônes et texte sur `--color-island` |
@@ -51,15 +53,16 @@ Variables optionnelles (valeurs par défaut dans `themes/index.css`) :
 
 Contrastes à respecter (WCAG AA) : 4,5:1 pour les textes sur leur fond
 (`--color-text` et `--color-text-muted` sur `--color-bg` et
-`--color-surface-solid`, `--color-on-active-muted` sur
-`--color-active-surface`, `--color-on-accent` sur `--color-accent`,
+`--color-surface-solid`, `--color-on-active` et `--color-on-active-muted` sur
+`--color-active-surface`, `--color-active-icon` sur `--color-active-icon-bg`, `--color-on-accent` sur `--color-accent`,
 `--color-on-island` sur `--color-island`) ; 3:1 pour les icônes,
 `--color-toggle-track` sur la carte et le focus.
 
 ## Thèmes existants
 
 - **Soda Pop** (par défaut) : la palette « pink strawberry edition ». Prune
-  `#391E34`, jaune soda `#FFF838` pour ce qui est allumé, fuchsia `#B51C87`
+  `#391E34`, jaune soda `#FFF838` réservé à la pastille des appareils allumés
+  (la carte reste blanche, ou prune claire en sombre), fuchsia `#B51C87`
   (rose `#ED8CD0` en sombre) pour les actions. Police Bricolage Grotesque.
 - **Ambre** : le thème d'origine, gris et ambre.
 

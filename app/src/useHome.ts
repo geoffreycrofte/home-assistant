@@ -7,6 +7,7 @@ import {
   getUser,
   subscribeEntities,
 } from "home-assistant-js-websocket";
+import { tap } from "./native";
 
 /** Domaines pilotables affichés dans l'app. */
 const DOMAINS = ["light", "switch"] as const;
@@ -128,7 +129,8 @@ export function useHome(conn: Connection) {
   }, [entities, optimistic, clearOptimistic]);
 
   const setPower = useCallback(
-    async (device: Device, on: boolean) => {
+    async (device: Device, on: boolean, { haptic = true } = {}) => {
+      if (haptic) tap();
       window.clearTimeout(timers.current.get(device.id));
       setOptimistic((o) => ({ ...o, [device.id]: on }));
       timers.current.set(

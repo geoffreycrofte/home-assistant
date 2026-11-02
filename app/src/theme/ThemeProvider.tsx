@@ -8,6 +8,7 @@ import {
   STORAGE_KEYS,
   type ThemeId,
 } from "./themes";
+import { syncStatusBar } from "../native";
 
 interface ThemeContextValue {
   theme: ThemeId;
@@ -66,7 +67,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     return () => darkQuery.removeEventListener("change", update);
   }, [mode]);
 
-  useEffect(() => apply(theme, resolvedMode), [theme, resolvedMode]);
+  useEffect(() => {
+    apply(theme, resolvedMode);
+    syncStatusBar(resolvedMode);
+  }, [theme, resolvedMode]);
 
   const value: ThemeContextValue = {
     theme,

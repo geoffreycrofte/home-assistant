@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { callService, type Connection } from "home-assistant-js-websocket";
+import type { Connection } from "home-assistant-js-websocket";
 import { IconWifiOff } from "@tabler/icons-react";
 import { type Device, useHome } from "./useHome";
 import { Island, type View } from "./components/Island";
@@ -8,6 +8,7 @@ import { DeviceSheet } from "./components/DeviceSheet";
 import { HomeView } from "./views/HomeView";
 import { EnergyView } from "./views/EnergyView";
 import { SettingsView } from "./views/SettingsView";
+import { tap } from "./native";
 
 interface Props {
   conn: Connection;
@@ -27,8 +28,8 @@ export function Shell({ conn, onLogout }: Props) {
   const close = useCallback(() => setOpenId(null), []);
 
   function allLightsOff() {
-    for (const d of lightsOn) setPower(d, false);
-    if (lightsOn.length) callService(conn, "light", "turn_off", { entity_id: lightsOn.map((d) => d.id) });
+    tap("medium");
+    for (const d of lightsOn) setPower(d, false, { haptic: false });
   }
 
   return (

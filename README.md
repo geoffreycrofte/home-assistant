@@ -2,10 +2,10 @@
 
 PWA pour piloter les objets connectés de la maison (lampes HEMA / Tuya, prises
 Tapo P110…), en s'appuyant sur **Home Assistant** qui tourne sur le NAS.
-Packageable plus tard en application native avec Capacitor.
+Aussi disponible en application Android / iOS grâce à Capacitor.
 
 ```
-Téléphone (PWA, puis app Capacitor)
+Téléphone (PWA ou app Capacitor)
      │  WebSocket (maison : direct · extérieur : Tailscale)
      ▼
 Synology DS223 → Container Manager → Home Assistant
@@ -20,12 +20,13 @@ Lampes HEMA/Tuya (LocalTuya) · Prises Tapo P110 (TP-Link)
 |---|---|
 | [`server/`](server/) | `docker-compose.yml` et `configuration.yaml` pour Home Assistant sur le Synology |
 | [`docs/installation-synology.md`](docs/installation-synology.md) | Guide pas à pas : NAS, Tapo, Tuya, installation de la PWA |
-| [`app/`](app/) | La PWA (Vite + React + TypeScript + `vite-plugin-pwa` + `home-assistant-js-websocket`) |
+| [`app/`](app/) | La PWA (Vite + React + TypeScript + `vite-plugin-pwa` + `home-assistant-js-websocket`) et ses projets natifs Capacitor (`app/android`, `app/ios`) |
+| [`docs/application-native.md`](docs/application-native.md) | Construire et installer l'app Android / iOS |
 
 ## Fonctionnalités de la PWA (v0.2)
 
 - Connexion à Home Assistant via sa page de connexion (OAuth), ou avec un
-  jeton longue durée (utile pour la future app native).
+  jeton longue durée (utilisé par l'app native).
 - **Maison** : lampes et prises en cartes, filtrables par pièce, avec un
   interrupteur sur chaque carte et une réponse immédiate (état optimiste).
 - **Fiche d'un appareil** (tap sur une carte) : cadran circulaire pour la
@@ -41,6 +42,8 @@ Lampes HEMA/Tuya (LocalTuya) · Prises Tapo P110 (TP-Link)
 - Icônes [Tabler Icons](https://tabler.io/icons), thème **Soda Pop** par
   défaut, système multi-thèmes documenté dans [`docs/themes.md`](docs/themes.md).
 - Reconnexion automatique, installable sur l'écran d'accueil (en HTTPS).
+- **App native Android / iOS** avec Capacitor : vibrations, barre d'état
+  accordée au thème, icônes et écran de démarrage Soda Pop.
 
 ## Développement
 
@@ -63,5 +66,4 @@ VITE_BASE=/local/maison/ npm run build   # puis copier dist/ dans config/www/mai
 
 ## Étapes suivantes
 
-- Packaging natif avec Capacitor (iOS / Android).
 - Aspirateur Xiaomi, balance (Bluetooth), caméra.
