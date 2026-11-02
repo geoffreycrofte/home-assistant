@@ -5,7 +5,7 @@ import { VitePWA } from "vite-plugin-pwa";
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   // Chemin de publication. Par défaut "/" ; pour servir l'app depuis
-  // Home Assistant (dossier config/www/maison) : VITE_BASE=/local/maison/
+  // Home Assistant (dossier config/www/kittens-nest) : VITE_BASE=/local/kittens-nest/
   const base = env.VITE_BASE || "/";
 
   return {
@@ -16,8 +16,8 @@ export default defineConfig(({ mode }) => {
         registerType: "autoUpdate",
         includeAssets: ["icon.svg", "icons/icon-180.png"],
         manifest: {
-          name: "Maison",
-          short_name: "Maison",
+          name: "Kitten's Nest",
+          short_name: "Kitten's Nest",
           description: "Pilotage des lampes et prises de la maison",
           lang: "fr",
           display: "standalone",

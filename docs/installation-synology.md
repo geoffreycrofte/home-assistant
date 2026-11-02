@@ -1,7 +1,7 @@
 # Installer Home Assistant sur un Synology DS223
 
 Ce guide installe Home Assistant en conteneur Docker sur le NAS, puis y ajoute
-les lampes HEMA / Tuya et les prises Tapo P110, et enfin la PWA « Maison ».
+les lampes HEMA / Tuya et les prises Tapo P110, et enfin la PWA « Kitten's Nest ».
 
 > Le DS223 n'a pas de Virtual Machine Manager : on utilise donc
 > **Home Assistant Container** (pas de « add-ons », ce qui ne gêne pas ici).
@@ -98,7 +98,7 @@ dépend d'Internet).
 et assigne chaque appareil. La PWA regroupe automatiquement les appareils par
 pièce.
 
-## 6. Installer la PWA « Maison »
+## 6. Installer la PWA « Kitten's Nest »
 
 La façon la plus simple est de laisser Home Assistant servir l'app lui-même
 (même adresse, donc aucune configuration CORS) :
@@ -107,13 +107,13 @@ La façon la plus simple est de laisser Home Assistant servir l'app lui-même
 
    ```bash
    npm install
-   VITE_BASE=/local/maison/ npm run build
+   VITE_BASE=/local/kittens-nest/ npm run build
    ```
 
-2. Dans File Station, crée `docker/homeassistant/config/www/maison/` et copies-y
+2. Dans File Station, crée `docker/homeassistant/config/www/kittens-nest/` et copies-y
    **le contenu** du dossier `app/dist/`.
 3. Si le dossier `www` n'existait pas, redémarre le conteneur Home Assistant.
-4. Ouvre `http://IP_DU_NAS:8123/local/maison/` et connecte-toi avec ton compte
+4. Ouvre `http://IP_DU_NAS:8123/local/kittens-nest/` et connecte-toi avec ton compte
    Home Assistant.
 
 > Les fichiers de `www` sont publics (mais ne contiennent aucun secret) :

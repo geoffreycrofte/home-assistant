@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Maison</string>
-    <string name="title_activity_main">Maison</string>
-    <string name="package_name">com.geoffreycrofte.maison</string>
-    <string name="custom_url_scheme">com.geoffreycrofte.maison</string>
+    <string name="app_name">Kitten\'s Nest</string>
+    <string name="title_activity_main">Kitten\'s Nest</string>
+    <string name="package_name">com.geoffreycrofte.kittensnest</string>
+    <string name="custom_url_scheme">com.geoffreycrofte.kittensnest</string>
 </resources>

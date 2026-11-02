@@ -33,7 +33,7 @@ export function Login({ onConnected, initialError }: Props) {
 
   return (
     <main className="login">
-      <h1>Maison</h1>
+      <h1>Kitten's Nest</h1>
       <p className="muted">Connecte-toi à ton serveur Home Assistant.</p>
       <form className="panel" onSubmit={submit}>
         <label>

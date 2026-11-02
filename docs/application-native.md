@@ -54,7 +54,7 @@ pas dans l'app.
 
 1. Dans Home Assistant : clique sur ton profil (en bas à gauche) → onglet
    **Sécurité** → **Jetons d'accès longue durée** → **Créer un jeton**,
-   nomme-le « Maison (téléphone) ».
+   nomme-le « Kitten's Nest (téléphone) ».
 2. Dans l'app : saisis l'adresse (`http://IP_DU_NAS:8123`) et colle le jeton.
 
 Pour révoquer l'accès d'un téléphone perdu, supprime son jeton dans
@@ -99,7 +99,7 @@ npm run cap:assets
 
 ## Avant de publier sur les stores
 
-- Remplace `appId` (`com.geoffreycrofte.maison`) dans `capacitor.config.ts`
+- Remplace `appId` (`com.geoffreycrofte.kittensnest`) dans `capacitor.config.ts`
   par l'identifiant définitif : il ne peut plus changer après la première
   publication. Pense à le changer aussi dans les projets natifs
   (`android/app/build.gradle` → `applicationId`, et le Bundle Identifier dans

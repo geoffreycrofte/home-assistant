@@ -3,8 +3,8 @@ import type { CapacitorConfig } from "@capacitor/cli";
 const config: CapacitorConfig = {
   // Identifiant unique de l'app sur les stores. À changer avant la première publication,
   // il ne peut plus être modifié ensuite.
-  appId: "com.geoffreycrofte.maison",
-  appName: "Maison",
+  appId: "com.geoffreycrofte.kittensnest",
+  appName: "Kitten's Nest",
   webDir: "dist",
   server: {
     // Android sert l'app en http://localhost : la connexion WebSocket en ws://

@@ -1,4 +1,4 @@
-package com.geoffreycrofte.maison;
+package com.geoffreycrofte.kittensnest;
 
 import com.getcapacitor.BridgeActivity;
 

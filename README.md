@@ -1,4 +1,4 @@
-# Maison
+# Kitten's Nest
 
 PWA pour piloter les objets connectés de la maison (lampes HEMA / Tuya, prises
 Tapo P110…), en s'appuyant sur **Home Assistant** qui tourne sur le NAS.
@@ -61,7 +61,7 @@ sur une autre adresse : `http://localhost:5173` doit figurer dans
 Build pour un déploiement servi par Home Assistant :
 
 ```bash
-VITE_BASE=/local/maison/ npm run build   # puis copier dist/ dans config/www/maison/
+VITE_BASE=/local/kittens-nest/ npm run build   # puis copier dist/ dans config/www/kittens-nest/
 ```
 
 ## Étapes suivantes
