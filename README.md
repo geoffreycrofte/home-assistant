@@ -1,14 +1,14 @@
 # Kitten's Nest
 
 PWA pour piloter les objets connectés de la maison (lampes HEMA / Tuya, prises
-Tapo P110…), en s'appuyant sur **Home Assistant** qui tourne sur le NAS.
+Tapo P110…), en s'appuyant sur **Home Assistant**.
 Aussi disponible en application Android / iOS grâce à Capacitor.
 
 ```
 Téléphone (PWA ou app Capacitor)
      │  WebSocket (maison : direct · extérieur : Tailscale)
      ▼
-Synology DS223 → Container Manager → Home Assistant
+Serveur Home Assistant (matériel à choisir, voir docs/plan-materiel.md)
      │  réseau local
      ▼
 Lampes HEMA/Tuya (LocalTuya) · Prises Tapo P110 (TP-Link)
@@ -19,7 +19,8 @@ Lampes HEMA/Tuya (LocalTuya) · Prises Tapo P110 (TP-Link)
 | Dossier | Rôle |
 |---|---|
 | [`server/`](server/) | `docker-compose.yml` et `configuration.yaml` pour Home Assistant sur le Synology |
-| [`docs/installation-synology.md`](docs/installation-synology.md) | Guide pas à pas : NAS, Tapo, Tuya, installation de la PWA |
+| [`docs/plan-materiel.md`](docs/plan-materiel.md) | **Où héberger Home Assistant** : constats sur le NAS actuel, choix du nouveau NAS, stockage, budget, migration |
+| [`docs/installation-synology.md`](docs/installation-synology.md) | Guide pas à pas : Home Assistant en conteneur, Tapo, Tuya, installation de la PWA |
 | [`app/`](app/) | La PWA (Vite + React + TypeScript + `vite-plugin-pwa` + `home-assistant-js-websocket`) et ses projets natifs Capacitor (`app/android`, `app/ios`) |
 | [`docs/application-native.md`](docs/application-native.md) | Construire et installer l'app Android / iOS |
 
@@ -65,5 +66,7 @@ VITE_BASE=/local/kittens-nest/ npm run build   # puis copier dist/ dans config/w
 ```
 
 ## Étapes suivantes
+
+- Choisir et installer le serveur Home Assistant (voir [`docs/plan-materiel.md`](docs/plan-materiel.md)).
 
 - Aspirateur Xiaomi, balance (Bluetooth), caméra.

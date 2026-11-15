@@ -1,5 +1,10 @@
 # Installer Home Assistant sur un Synology DS223
 
+> ⚠️ **Le NAS actuel est un DS220j (512 Mo de RAM) : il ne peut pas héberger
+> Home Assistant.** Voir [`plan-materiel.md`](plan-materiel.md) pour les
+> options. Les étapes 3 à 7 (Tapo, Tuya, pièces, PWA, dépannage) restent
+> valables quelle que soit la machine.
+
 Ce guide installe Home Assistant en conteneur Docker sur le NAS, puis y ajoute
 les lampes HEMA / Tuya et les prises Tapo P110, et enfin la PWA « Kitten's Nest ».
 
